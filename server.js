@@ -2,11 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-// const cors = require('cors');
-// const corsOptions = require('./config/corsOptions');
+const cors = require('cors');
+const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const credentials = require('./middleware/credentials');
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
@@ -22,7 +22,7 @@ app.use(logger);
 app.use(credentials);
 
 
-// app.use(cors(corsOptions));
+pp.use(cors(corsOptions));
 
 
 app.use(express.urlencoded({ extended: false }));
